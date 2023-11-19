@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins&family=Raleway:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Twitter</h1>
+    <h2>Edit your post below</h2>
+    <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+        <div class="form">
+            <h3>username: @<%= post.username %></h3>
+            <p>id: <%= post.id %></p>
+            <p>Img URL: <input type="text" value="<%= post.url %>" name="url"></p>
+            <textarea id="" cols="70" rows="10" name="content"><%= post.content %></textarea>
+            <button>Submit</button>
+        </div>
+    </form>
+</body>
+</html>

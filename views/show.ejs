@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post in Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins&family=Raleway:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Twitter</h1>
+    <h2>Here is your post in details</h2>
+    <div class="box">
+        <img src="<%= post.url %>" alt="img">
+        <div class="data">
+            <h3>@<%= post.username %>
+            </h3>
+            <p>id: <%= post.id %></p>
+            <h4>
+                <%= post.content %>
+            </h4>
+        </div>
+    </div>
+</body>
+</html>

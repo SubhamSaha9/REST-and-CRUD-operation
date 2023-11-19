@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tweets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins&family=Raleway:ital,wght@0,300;0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Twitter</h1>
+    <div class="container">
+        <% for( let post of posts) { %>
+            <div class="box">
+                <img src="<%= post.url %>" alt="img">
+                <div class="data">
+                    <h3>@<%= post.username %></h3>
+                    <h4><%= post.content %></h4>
+                </div>
+                <a href="http://localhost:8080/posts/<%= post.id %>">See In Details</a>
+                <a href="http://localhost:8080/posts/<%= post.id %>/edit">Edit this Tweet</a>
+                <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+                    <button id="btn">Delete Post</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+    <a href="http://localhost:8080/posts/new">Add new tweet</a>
+</body>
+</html>
